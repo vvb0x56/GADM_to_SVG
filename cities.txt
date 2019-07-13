@@ -1,0 +1,41 @@
+Node: Elista (191648647)
+Location: 46.3069990, 44.2701870
+
+Node: Troitskoye (935471197)
+Location: 46.4110680, 44.2607040
+
+Node: Кетченеры (936186502)
+Location: 47.3043710, 44.5283160
+
+Node: Sadovoye (936169076)
+Location: 47.7707657, 44.5046142
+
+Node: Malye Derbety (936162170)
+Location: 47.9478031, 44.6674977
+
+Node: Priyutnoye (935391368)
+Location: 46.1006890, 43.5124320
+
+Node: Yashalta (1401401726)
+Location: 46.3385265, 42.2726097
+
+Node: Gorodovikovsk (1401400307)
+Location: 46.0828510, 41.9342690
+
+Node: Yashkul (935566173)
+Location: 46.1741680, 45.3434640
+
+Node: Komsomolskiy (3030179770)
+Location: 45.3296700, 46.0429800
+
+Node: Lagan (810728424)
+Location: 45.3920590, 47.3612820
+
+Node: Iki Burul (895164397)
+Location: 45.8229980, 44.6470030
+
+
+
+
+
+
