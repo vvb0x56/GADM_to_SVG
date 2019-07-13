@@ -24,6 +24,7 @@ const MCapital KOMSO = { "Komsomolskiy", 46.0429800, 45.3296700 };
 const MCapital LAGAN = { "Lagan", 47.3612820, 45.3920590 };
 const MCapital IKI_B = { "Iki-Burul", 44.6470030, 45.8229980 };
 const MCapital TSAGA = { "Tsagan Aman", 46.724106, 47.565372 };
+const MCapital TSARY = { "Bolshoy Tsaryn", 45.428036, 47.850693 };
 
 
 double geo2pxf_lon(double lon, double origin_lon, double origin_lat) {
@@ -430,6 +431,14 @@ static void print_svg_capitals( double svg_width,
 
     lon = geo2pxf_lon(TSAGA.lon, origin_lon, origin_lat);
     lat = geo2pxf_lat(TSAGA.lat, origin_lat);
+    
+    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
+    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
+    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
+
+
+    lon = geo2pxf_lon(TSARY.lon, origin_lon, origin_lat);
+    lat = geo2pxf_lat(TSARY.lat, origin_lat);
     
     std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
     std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
