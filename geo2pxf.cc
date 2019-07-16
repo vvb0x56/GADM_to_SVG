@@ -11,20 +11,22 @@
 
 #include "common.hh"
 
-const MCapital ELIST = { "Elista", 44.2701870, 46.3069990 };
-const MCapital TROIT = { "Troitskoye", 44.2607040, 46.4110680 };
-const MCapital KETCH = { "Ketchenery", 44.5283160, 47.3043710 };
-const MCapital SADOV = { "Sadovoe", 44.5046142, 47.7707657 };
-const MCapital MALYE = { "Malyye Derbety", 44.6674977, 47.9478031 };
-const MCapital PRIYU = { "Priyutnoye", 43.5124320, 46.1006890 };
-const MCapital YASHA = { "Yashalta", 42.2726097, 46.3385265 };
-const MCapital GOROD = { "Gorodovikovsk", 41.9342690, 46.0828510 };
-const MCapital YASHK = { "Yashkul", 45.3434640, 46.1741680 };
-const MCapital KOMSO = { "Komsomolskiy", 46.0429800, 45.3296700 };
-const MCapital LAGAN = { "Lagan", 47.3612820, 45.3920590 };
-const MCapital IKI_B = { "Iki-Burul", 44.6470030, 45.8229980 };
-const MCapital TSAGA = { "Tsagan Aman", 46.724106, 47.565372 };
-const MCapital TSARY = { "Bolshoy Tsaryn", 45.428036, 47.850693 };
+const int REGIONS_NUMBER = 14;
+
+const MCapital regions[REGIONS_NUMBER]  = { { "Elista", 44.2701870, 46.3069990 },
+                                            { "Troitskoye", 44.2607040, 46.4110680 },
+                                            { "Ketchenery", 44.5283160, 47.3043710 },
+                                            { "Sadovoe", 44.5046142, 47.7707657 },
+                                            { "Malyye Derbety", 44.6674977, 47.9478031 },
+                                            { "Priyutnoye", 43.5124320, 46.1006890 },
+                                            { "Yashalta", 42.2726097, 46.3385265 },
+                                            { "Gorodovikovsk", 41.9342690, 46.0828510 },
+                                            { "Yashkul", 45.3434640, 46.1741680 },
+                                            { "Komsomolskiy", 46.0429800, 45.3296700 },
+                                            { "Lagan", 47.3612820, 45.3920590 },
+                                            { "Iki-Burul", 44.6470030, 45.8229980 },
+                                            { "Tsagan Aman", 46.724106, 47.565372 },
+                                            { "Bolshoy Tsaryn", 45.428036, 47.850693 } };
 
 
 double geo2pxf_lon(double lon, double origin_lon, double origin_lat) {
@@ -333,117 +335,18 @@ static void print_svg_capitals( double svg_width,
                                 double origin_lon,
                                 double origin_lat) {
 
-    double lon = geo2pxf_lon(ELIST.lon, origin_lon, origin_lat);
-    double lat = geo2pxf_lat(ELIST.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
 
-
-    lon = geo2pxf_lon(TROIT.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(TROIT.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(KETCH.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(KETCH.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(SADOV.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(SADOV.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(MALYE.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(MALYE.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(PRIYU.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(PRIYU.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(YASHA.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(YASHA.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(GOROD.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(GOROD.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(YASHK.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(YASHK.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(KOMSO.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(KOMSO.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height -scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(LAGAN.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(LAGAN.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(IKI_B.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(IKI_B.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(TSAGA.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(TSAGA.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
-
-
-    lon = geo2pxf_lon(TSARY.lon, origin_lon, origin_lat);
-    lat = geo2pxf_lat(TSARY.lat, origin_lat);
-    
-    std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
-    std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
-    std::cout << "r=\"" << svg_width / 500 << "\" />" << std::endl;
+    for (int i = 0; i < REGIONS_NUMBER; i++) {
+        double lon = geo2pxf_lon(regions[i].lon, origin_lon, origin_lat);
+        double lat = geo2pxf_lat(regions[i].lat, origin_lat);
+        
+        std::cout << "\t\t\t<circle cx=\"" << scaleCoordsToSvgSize(lon, svg_width, max_longitude);
+        std::cout << "\" cy=\"" << svg_height - scaleCoordsToSvgSize(lat, svg_height, max_latitude) << "\" ";
+        std::cout << "r=\"" << round(svg_width / 500) << "\" />" << std::endl;
+        
+    }
 }
+
 
 static void print_svg(          std::vector<Object *> objects, 
                                 int svg_width, 
