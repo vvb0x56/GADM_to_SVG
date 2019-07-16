@@ -513,7 +513,7 @@ int main(int argc, char** argv) {
 
     Object *obj = nullptr;
 
-    InputType boundaryType = InputType::NONE;
+    InputType boundaryType = NONE;
     bool newInnerBoundaryFlag = false; int currInnerBoundaryIndex = -1; // this will eq to 0, when we meet inner boundary
 
 
@@ -528,7 +528,7 @@ int main(int argc, char** argv) {
 
             InputType it = GetInputType(val1, val2);
             switch (it) {
-                case InputType::NAME:
+                case NAME:
                     //cout << "Name" << endl;
                     if (obj) { // Then it's a new object, and old we add to the list 
                         //obj->print();
@@ -543,27 +543,27 @@ int main(int argc, char** argv) {
                     }   
                     obj->name = val2;
                     break;
-                case InputType::OUTER_BOUNDARY:
-                    boundaryType = InputType::OUTER_BOUNDARY;
+                case OUTER_BOUNDARY:
+                    boundaryType = OUTER_BOUNDARY;
                     //cout << "Outer" << endl;
                     break;
-                case InputType::INNER_BOUNDARY:
+                case INNER_BOUNDARY:
                     //cout << "Inner" << endl;
-                    boundaryType = InputType::INNER_BOUNDARY;
+                    boundaryType = INNER_BOUNDARY;
                     newInnerBoundaryFlag = true;
                     break;
-                case InputType::COORDINATES:
+                case COORDINATES:
                     //cout << "Coords" << endl;
 
                     // Coords must to belong one of the boundary type
                     // we also expect that obj pointer is not null here
-                    if (boundaryType == InputType::OUTER_BOUNDARY) {
+                    if (boundaryType == OUTER_BOUNDARY) {
                         if (obj) {
                             obj->outerBoundary->longitude.push_back(strtod(val1.c_str(), NULL));
                             obj->outerBoundary->latitude.push_back(strtod(val2.c_str(), NULL));
                         }
                     }
-                    if (boundaryType == InputType::INNER_BOUNDARY) {
+                    if (boundaryType == INNER_BOUNDARY) {
                         if (obj) {
                             if (newInnerBoundaryFlag) {
                                 obj->innerBoundaries.push_back(new MCoordinates);
@@ -577,7 +577,7 @@ int main(int argc, char** argv) {
                     }
 
                     break;
-                case InputType::NONE:
+                case NONE:
                     cout << "Unkown string format" << ss.str() << endl;
                     break;
                 default:

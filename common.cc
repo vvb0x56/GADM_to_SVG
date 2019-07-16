@@ -14,18 +14,18 @@ bool IsNumeric(const std::string& str) {
 
 InputType GetInputType(std::string& val1, std::string& val2) {
     if (val1.compare(NAME_STR) == 0) {
-        return InputType::NAME;
+        return NAME;
 
     } else if (val1.compare(OUTER_BOUNDARY_STR) == 0) {
-        return InputType::OUTER_BOUNDARY;
+        return OUTER_BOUNDARY;
 
     } else if (val1.compare(INNER_BOUNDARY_STR) == 0) {
-        return InputType::INNER_BOUNDARY;
+        return INNER_BOUNDARY;
 
     } else { // at the end we expect coords
         if (IsNumeric(val1) && IsNumeric(val2)) {
-            return InputType::COORDINATES;
+            return COORDINATES;
         }
     }   
-    return InputType::NONE;
+    return NONE;
 }
